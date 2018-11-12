@@ -47,5 +47,6 @@ app.get("*",function(req,res){
 
 });
 files.update();
+console.log("Attempting to run");
 app.listen(process.env.PORT || 8000);
 console.log("Listening on port " + process.env.PORT + "...");
