@@ -65,23 +65,23 @@ application.config(["$routeProvider","$locationProvider","$compileProvider",
         $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|file|blob):|data:image\//);
         $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|file|blob):|data:image\//);
 
-    $routeProvider.when("/content/:group/blocks/:blockname/chapter/:chaptername",{
-        templateUrl: "templates/newContent.html",
-        controller: "MainContentCtrl",
-        resolve: {
-            dataBlock: function(navigate,dataFetcher,$route){
-                if (!navigate.getData() || navigate.getGroup()!=$route.current.params.group){
-                    return dataFetcher.get($route.current.params.group).$promise.then(
-                        function(res){
-                            navigate.setData(res,$route.current.params.group);
-                            return res;
-                        }
-                    )
+        $routeProvider.when("/content/:group/blocks/:blockname/chapter/:chaptername",{
+            templateUrl: "templates/newContent.html",
+            controller: "MainContentCtrl",
+            resolve: {
+                dataBlock: function(navigate,dataFetcher,$route){
+                    if (!navigate.getData() || navigate.getGroup()!=$route.current.params.group){
+                        return dataFetcher.get($route.current.params.group).$promise.then(
+                            function(res){
+                                navigate.setData(res,$route.current.params.group);
+                                return res;
+                            }
+                        )
+                    }
+                    else return navigate.getData();
                 }
-                else return navigate.getData();
             }
-        }
-    })
+        })
         .when("/content/:group/blocks/:blockname",{
             template: "",
             controller: "ContentRedirecter",
