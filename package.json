@@ -2,6 +2,10 @@
   "name": "SupportForPeopleWithDisabilities",
   "version": "0.0.1",
   "homepage": "http://localhost:8000/",
+  "engines": {
+    "node": "9.3.0",
+    "npm": "5.5.1"
+  },
   "scripts": {
     "share": "lt --port 8000",
     "start": "node server/web-server.js",
