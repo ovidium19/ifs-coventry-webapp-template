@@ -1,5 +1,5 @@
 # IFS Coventry WebApp Template
-Website link: [ifs-coventry-template.herokuapp.com](ifs-coventry-template.herokuapp.com)
+Website link: [ifs-coventry-template.herokuapp.com](https://ifs-coventry-template.herokuapp.com)
 
 ## Required
 - Node 6.3.0
